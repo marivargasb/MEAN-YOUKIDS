@@ -1,0 +1,106 @@
+
+
+
+
+
+
+
+    <div class="mdl-grid site-max-width">
+        <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
+ <div class="mdl-card__title">
+    <h1 class="mdl-card__title-text">EDIT MY ACCOUNT {{apiService.parentss.name}} {{apiService.parentss.surnames}}  </h1> 
+  </div>
+<div class="mdl-grid site-copy">
+<div class="mdl-cell mdl-cell--12-col">
+<div class="mdl-card__supporting-text">
+<p>Contact our team using the contact form below:</p>
+
+
+<form  id="formParent"  #pa="ngForm" (ngSubmit)="editparent(pa.value)" novalidate class="form-contact">
+  
+
+ <input class="mdl-textfield__input" type="hidden"  name="_id"  ngModel required [(ngModel)]="apiService.parentss._id" /> 
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" [(ngModel)]="apiService.parentss.name" name="name"   type="text" ngModel required >
+    <label class="mdl-textfield__label" for="name">Name...</label>
+    </div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input"  [(ngModel)]="apiService.parentss.surnames" name="surnames" type="text" ngModel required >
+    <label class="mdl-textfield__label" for="surnames">surnames...</label>
+    </div>   
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+   <select class="mdl-textfield__input" [(ngModel)]="apiService.parentss.country" name="country" ngModel  >
+      <option selected value="costa rica">Costa Rica</option>
+      <option value="guatemala">Guatemala</option>
+      <option value="nueva zelanda">Nueva Zelanda</option>
+      <option value="mexico">Mexico</option>
+     </select>
+   <label class="mdl-textfield__label" for="country">contry...</label>
+   </div>   
+              
+
+
+<p>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Register" >
+  Submit
+</button>
+
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" (click)="deleteparent()" value="delete" >
+    eliminar
+  </button>
+</p> 
+</form>
+
+<div class="alert" *ngIf="danger" >
+	<span class="closebtn" (click)="danger = false"> X </span> {{mensaje}}
+  </div>
+
+  <div class="alertpass" *ngIf="pass">
+	<span class="closebtn" (click)="pass = false"> X </span> {{mensaje}}
+  </div>
+
+  <div class="alertw" *ngIf="war"> 
+	<span class="closebtn" (click)="war = false"> X </span> {{mensaje}}
+  </div>
+
+
+</div></div>
+</div> </div>
+</div>
+
+
+
+
+
+
+
+
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#starks-panel" class="mdl-tabs__tab "> <h4> Youkids  </h4></a>
+     
+        <a href="#lannisters-panel" class="mdl-tabs__tab"> <h4> Kids </h4></a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab"> <h4> Videos </h4></a>
+    </div>
+  
+    <br>
+    <br>
+    <div class="mdl-tabs__panel is-active" id="starks-panel">
+
+      <app-videos>  </app-videos>
+      
+     
+    </div>
+    <div class="mdl-tabs__panel" id="lannisters-panel">
+    
+      <app-kids>  </app-kids>
+
+    </div>
+    <div class="mdl-tabs__panel" id="targaryens-panel">
+      <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp welcome-card2 portfolio-card2">
+        <div class="mdl-card__title2">
+          <h2 class="mdl-card__title-text">Welcome</h2>
+        </div>
+  </div>
+    </div>
+  </div>

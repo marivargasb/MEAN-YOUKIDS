@@ -1,0 +1,74 @@
+
+    <div class="mdl-grid site-max-width">
+            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
+     <div class="mdl-card__title">
+        <h1 class="mdl-card__title-text">Register</h1>
+      </div>
+<div class="mdl-grid site-copy">
+    <div class="mdl-cell mdl-cell--12-col"><div class="mdl-card__supporting-text">
+<p>Contact our team using the contact form below:</p>
+
+
+<form  id="formParent"  #pa="ngForm" (ngSubmit)="registerParents(pa.value)" novalidate class="form-contact">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+    <input class="mdl-textfield__input" [(ngModel)]="email" name="email" type="email" ngModel required >
+    <label class="mdl-textfield__label" for="email">Email...</label>
+    <span class="mdl-textfield__error">Letters and spaces only</span> 
+</div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" [(ngModel)]="password" name="password" type="password" ngModel required >
+    <label class="mdl-textfield__label" for="password">password...</label>
+    </div>
+ <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+     <input class="mdl-textfield__input" [(ngModel)]="passwordConfirmation" name="passwordConfirmation" type="password"  ngModel required >
+     <label class="mdl-textfield__label" for="password">Password Confimation...</label>
+     </div>
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" [(ngModel)]="name" name="name"   type="text" ngModel required >
+    <label class="mdl-textfield__label" for="name">Name...</label>
+    </div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input"  [(ngModel)]="surnames" name="surnames" type="text" ngModel required >
+    <label class="mdl-textfield__label" for="surnames">surnames...</label>
+    </div>   
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+   <select class="mdl-textfield__input" [(ngModel)]="country" name="country" ngModel required >
+      <option value="costa rica">Costa Rica</option>
+      <option value="guatemala">Guatemala</option>
+      <option value="nueva zelanda">Nueva Zelanda</option>
+      <option value="mexico">Mexico</option>
+     </select>
+   <label class="mdl-textfield__label" for="country">contry...</label>
+   </div>   
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+   <input class="mdl-textfield__input" [(ngModel)]="birth" name="birth" type="date"  ngModel required >
+
+   </div>               
+
+
+<p>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Register" >
+  Submit
+</button>
+
+
+</p>
+</form>
+
+<div class="alert" *ngIf="danger" >
+	<span class="closebtn" (click)="danger = false"> X </span> {{mensaje}}
+  </div>
+
+  <div class="alertpass" *ngIf="pass">
+	<span class="closebtn" (click)="pass = false"> X </span> {{mensaje}}
+  </div>
+
+  <div class="alertw" *ngIf="war"> 
+	<span class="closebtn" (click)="war = false"> X </span> {{mensaje}}
+  </div>
+
+</div></div>
+  </div> </div>
+</div>
