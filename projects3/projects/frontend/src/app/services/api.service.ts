@@ -6,7 +6,7 @@ import { Parent } from '../lib/parent';
 import { rendererTypeName } from '@angular/compiler';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import 'rxjs/add/operator/filter'
+import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 
 
@@ -15,7 +15,6 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     //'authorization': this.authToken 
-
   })
 };
 

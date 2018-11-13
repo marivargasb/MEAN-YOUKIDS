@@ -44,9 +44,6 @@ export function tokenGetter() {
     KidsComponent,
     CodeComponent,
 
-
-
-
   ],
   imports: [
     BrowserModule,
